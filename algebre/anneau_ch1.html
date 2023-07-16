@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Anneau</title>
+        <link rel="stylesheet" href="../lesson_cs.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../home.html">Cours</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Exercice</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        <div class="contenu">
+
+          <h1>Chapitre 1 : Anneau</h1>
+
+          <p>\( A \) désigne un ensemble non-vide.</p>
+
+            <h2>Définition</h2>
+            
+            <div class="def">
+              <p> <b>Définition (Anneau).</b> On appelle anneau tout ensemble \( A \) muni des applications \( + : A \times A \rightarrow A \) et \( \times : A \times A \rightarrow A \) vérifiant <ul>
+                  <li>\( \forall x,y,z \in A \mbox{, } (x+y)+z = x+(y+z) \)</li>
+                  <li>\( \forall x,y,z \in A \mbox{, } (x \times y) \times z = x \times (y \times z) \)</li>
+                  <li>\( \exists 0_A \in A \mbox{, } \forall x \in A \mbox{, } x + 0_A = 0_A + x = x \) </li>
+                  <li>\( \exists 1_A \in A \mbox{, } \forall x \in A \mbox{, } x \times 1_A = 1_A \times x = x \) </li>
+                  <li>\( \forall x \in A \mbox{, } \exists -x \in A \mbox{, } x + (-x) = (-x) + x = 0_A \) </li>
+                  <li>\( \forall x \in A \mbox{, } \exists x^{-1} \in A \mbox{, } x \times x^{-1}  =  x^{-1} \times x = 1_A \) </li>
+                  <li>\( \forall x,y,z \in A \mbox{, } (x+y) \times z = x \times z + y \times z \) et \( x \times (y+z) = x \times y + x \times z \)</li>
+              </ul> </p>
+            </div>
+            
+            <div class="rema">
+            <p> <b>Remarque.</b> \( A = \left\{ 0_A \right\} \) est l'unique anneau pour lequel \( 1_A = 0_A \). Notons que c'est une équivalence et qu'elle est immédiate par définition d'un anneau.</p>
+            </div>
+
+            <div class="rema">
+            <p> <b>Remarque.</b> Lorsque \( 1_A \) existe, on dit que \( A \) est unitaire.</p>
+            </div>
+
+            <div class="exem">
+              <p> <b>Exemple (les nombres).</b> On peut citer : \( ( \mathbb{Q} , + , \times ) \), \( ( \mathbb{C} , + , \times ) \).</p>
+
+              <p> <b>Exemple (les matrices).</b> On peut citer : \( ( \mathrm{M}_n( \mathbb{R} ) ,+, \times ) \), \( ( \mathrm{GL}_n( \mathbb{R} ) ,+ , \times ) \).</p>
+
+              <p> <b>Exemple (les polynômes).</b> On peut citer : \( ( \mathbb{C}[X] ) ,+, \times ) \), \( ( \mathbb{R}[X,Y] ,+ , \times ) \).</p>
+            </div>
+
+          <h2>Sous-anneaux</h2>
+
+            <div class="def">
+              <p> <b>Définition (Sous-anneau).</b> On dit que \( B \) est un sous-anneau d'un anneau \( (A,+, \times ) \) si <ul>
+                  <li>\( B \) est une partie non vide de \(A\)</li>
+                  <li>\((A,+,\times )\) est un groupe </li>
+              </ul> </p>
+            </div>
+
+            <div class="prop">
+              <p> <b>Proposition.</b> Soit \(A\) un anneau. Si \( B,C \) sont des sous-anneaux de \(A\) alors \( B \cap C \) est un sous-groupe de \(A\) .</p>
+            </div>
+
+            <button class="collapsible">Démonstration</button>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div class="thm">
+              <p> <b>Théorème.</b> Soit \(A\) un anneau. On a équivalence entre <ul>
+                  <li>\(B\) est un sous-anneau de \(A\)</li>
+                  <li>\(B\) est une partie non vide de \(A\) et \( \forall x,y \in B \mbox{, } x - y \in B \) et \( x \times y \in B \)</li>
+              </ul> </p>
+            </div>
+
+            <p>Ce résultat est très efficace en pratique.</p>
+
+            <h2>Morphisme d'anneau</h2>
+
+            Dans cette section \( A,B \) désignent des anneaux.
+
+            <div class="def">
+                <p>
+                    <b>Définition (Morphisme d'anneau).</b> On dit qu'une application \( f : A \rightarrow B \) est un morphisme d'anneau si <ol>
+                        <li>\(A,B\) sont des anneaux</li>
+                        <li> \( f(1_A) = 1_B \) </li>
+                        <li> \( \forall x,y \in A \mbox{, } f(x+y) = f(x) + f(y) \) et \( f(xy) = f(x)f(y) \) </li>
+                    </ol>
+                </p>
+            </div>
+
+            <p>Dans ce cours, \( A,B \) sont naturellement des anneaux mais en dehors, en exercice, la structure d'anneaux de \( A,B \) devront être justifiée (donc démontrée) pour des raisons de rigueur.</p>
+
+            <div class="exem">
+                <b>Exemple (Frobenius).</b> On peut citer \( f : \mathbb{Z}/p\mathbb{Z} \rightarrow \mathbb{Z}/p\mathbb{Z} \mbox{, } x \mapsto x^p \) avec \(p\) premier.
+            </div>
+
+            <p>
+                On dit qu'un morphisme d'anneau \( f:A \rightarrow B \) est <ul>
+                    <li> un endomorphisme d'anneau si \( A = B \) </li>
+                    <li> un isomorphisme d'anneau si \( f \) est bijective </li>
+                    <li> un automorphisme d'anneau si \( A = B \) et \(f\) est bijective </li>
+                </ul>
+            </p>
+
+        </div>
+
+        <div class="footnav">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary"><a href="anneau.html">Sortir</a></button>
+            <button type="button" class="btn btn-outline-primary">Chapitre 2</button>
+          </div>
+        </div>
+
+        <script>
+          var coll = document.getElementsByClassName("collapsible");
+          var i;
+          
+          for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.maxHeight){
+                content.style.maxHeight = null;
+              } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+              } 
+            });
+          }
+          </script>
+    </body>
+</html>

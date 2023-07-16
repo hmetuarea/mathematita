@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:wght@400;600;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ysabeau Office";
+    color: white;
+}
+
+/*header*/
+
+header {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(30px);
+}
+
+header .navigation a {
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 500;
+    color: white;
+}
+
+.navigation {
+    position: fixed;
+    opacity: 0;/*
+    transition: all 1s;
+    transform: translateY(-100%);*/
+}
+
+/* footer */
+
+.footnav {
+    width: 100%;
+    text-align: right;
+    padding: 0.6%;
+    bottom: 0;
+    position: fixed;
+    backdrop-filter: blur(30px);
+}
+
+/* cours */
+
+.contenu {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-bottom: 30%;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #6d071a;
+}
+
+.chapitre {
+    padding-top: 8%;
+    font-weight: 700;
+    padding-bottom: 2.5%;
+    padding-left: 5%;/*
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(-100%);*/
+}
+
+.subtitle {
+    padding-left: 10%;
+    font-weight: 600;/*
+    opacity: 0;
+    transition: all 2s;
+    transform: translateX(-100%);*/
+}
+
+/* contents */
+
+.textes {
+    width: 90%;
+    font-weight: 400;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.def {
+    border-left: rgb(100, 171, 207) solid 4px;
+    border-radius: 15px;
+    padding-left: 2%;
+}
+
+.prop {
+    border-left: rgb(146, 229, 146) solid 4px;
+    border-radius: 15px;
+    padding-left: 2%;
+}
+
+.thm {
+    border-left: rgb(253, 128, 128) solid 4px;
+    border-radius: 15px;
+    padding-left: 2%;
+}
+
+/* les modules */
+
+.collapsible {
+    background-color: rgba(111, 111, 111, 0.5);
+    color: white;
+    cursor: pointer;
+    padding: 1%;
+    margin-left: 5%;
+    width: 90%;
+    border: none;
+    border-radius: 15px;
+    text-align: right;
+    outline: none;
+    font-size: 15px;
+  }
+  
+.active, .collapsible:hover {
+    background-color: #555;
+  }
+  
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: 300;
+    float: right;
+    margin-left: 5px;
+  }
+  
+.active:after {
+    content: "\2212";
+  }
+  
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    backdrop-filter: blur(30px);
+  }
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*slider*/
+.slidecontainer {
+    width: 100%;
+}
+  
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+/*all*/
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}

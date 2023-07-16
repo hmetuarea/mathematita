@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Groupe</title>
+        <link rel="stylesheet" href="../lesson_cs.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+      <header>
+        <nav class="navigation">
+            <a href="../home.html">Home</a>
+            <a href="../algebre/groupe.html">Retour leçon</a>
+        </nav>
+      </header>
+      <section class="contenu">
+
+        <h1 class="chapitre" >Chapitre 1 : Groupe</h1>
+
+        <h2 class="subtitle">Définition</h2>
+
+        <div class="textes">
+            
+          <div class="def">
+            <p> <b>Définition (Groupe).</b> On appelle groupe tout ensemble \( G \) muni d'une application \( * : G \times G \rightarrow G \) vérifiant <ul>
+                <li>\( \forall x,y,z \in G \mbox{, } (x*y)*z = x*(y*z) \)</li>
+                <li>\( \exists e \in G \mbox{, } \forall x \in G \mbox{, } x*e = e*x = x \) </li>
+                <li>\( \forall x \in G \mbox{, } \exists s \in G \mbox{, } x*s = s*x = e \) </li>
+            </ul> </p>
+          </div>
+          
+          <p>Si \( * \) désigne la multiplication (resp. l'addition) on dit que \( G \) est noté multiplicativement (resp. additivement). En général, on porte moins d'attention aux groupes additives ; leurs propriétés étant facilement anticipable. C'est pourquoi, les groupes multiplicatifs seront en grande partie étudiés.</p>
+
+          <div class="exem">
+            <p> <b>Exemple (les nombres).</b> On peut citer : \( ( \mathbb{Q} , \times ) \), \( ( \mathbb{C} , \times ) \). <br>  
+                <b>Exemple (les matrices).</b> On peut citer : \( ( \mathrm{M}_n( \mathbb{R} ) , \times ) \), \( ( \mathrm{GL}_n( \mathbb{R} ) , \times ) \). <br>
+                <b>Exemple (les polynômes).</b> On peut citer : \( ( \mathbb{C}[X] , \times ) \), \( ( \mathbb{R}[X,Y] , \times ) \).
+            </p>
+          </div>
+        </div>
+
+        <h2 class="subtitle">Sous-groupe</h2>
+
+        <div class="textes">
+          <div class="def">
+            <p> <b>Définition (Sous-groupe).</b> On dit que \( H \) est un sous-groupe d'un groupe \( (G,*) \) si <ul>
+                <li>\( H \) est une partie non vide de \(G\)</li>
+                <li>\((H,*)\) est un groupe </li>
+            </ul> </p>
+          </div>
+
+          <div class="prop">
+            <p> <b>Proposition.</b> Soit \(G\) un groupe. Si \( H,I \) sont des sous-groupes de \(G\) alors \( H \cap I \) est un sous-groupe de \(G\) .</p>
+          </div>
+
+          <button class="collapsible">Démonstration</button>
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+
+          <div class="thm">
+            <p> <b>Théorème.</b> Soit \(G\) un groupe. On a équivalence entre <ul>
+                <li>\(H\) est un sous-groupe de \(G\)</li>
+                <li>\(H\) est une partie non vide de \(G\) et \( \forall x,y \in G \mbox{, } x*y^{-1} \in G \)</li>
+            </ul> </p>
+          </div>
+
+          <div class="prop">
+            <p> <b>Lemme (de Serre).</b> Soit \(G\) un groupe fini d'ordre \( n \in \mathbb{N}^* \), soit \( H \) un sous-groupe de \( G \) et \(p\) un nombre premier vérifiant \( n = p^{\alpha}m \) avec \( \alpha \in \mathbb{N}^* \) et \( p \wedge m = 1 \). <br>
+              Si \( S \) est un \( p \)-sous-groupe de Sylow de \( G \) alors il existe \( g \in G \) tel que \( g S g^{-1} \cap H \) est un \( p \)-sous-groupe de Sylow de \( H \).
+            </p>
+          </div>
+
+          <button class="collapsible">Démonstration (version de D. Perrin)</button>
+          <div class="content">
+            <p> <i>Présentation</i> Soit \(G\) un groupe fini d'ordre \( n \in \mathbb{N}^* \) et soit \( H \) un sous-groupe de \( G \). <br>
+              On suppose que \( S \) est un \( p \)-sous-groupe de Sylow de \( G \) et on va montrer qu'il existe \( g \in G \) tel que \( g S g^{-1} \cap H \) est un \( p \)-sous-groupe de Sylow de \( H \). <br>
+              <i>Step 1 :</i> L'action de \( G \) sur \( G/S \) par translation à gauche indique que le stabilisateur de \( gS \) avec \( g\in G \) est \( g S g^{-1} \). Par restriction, comme \( H \) est un sous-groupe de \( G \) alors l'action de \( H \) sur \( G/S \) est indique que le stabilisateur de \(gS\) est \( gSg^{-1} \cap H \). <br>
+              Comme tout stabilisateur est un sous-groupe alors \( gSg^{-1} \cap H \) est un sous-groupe de \(H\). <br>
+              <i>Step 2 :</i>Comme \( S \) est un \( p \)-groupe alors \( gSg^{-1} \cap H \) est un \( p \)-sous-groupe de \(H\). <br>
+              <i>Step 3 :</i> Si \( p \) divise l'ordre de \( H/ gSg^{-1} \cap H \) alors l'isomorphisme de groupe \( H/ gSg^{-1} \cap H \simeq O_{gS}  \), où \( O_{gS} \) désigne l'orbite de \(gS\) sous l'action par translation à gauche, indique que \(p\) divise \( \vert O_{gS} \vert \). <br>
+              D'après l'équation aux classes, de l'action par translation à gauche de \( H \) sur \( G/S \), indique que \( \vert G/S \vert = \sum_{x \in G/S} \vert O_x \vert = \sum_{g \in G} \vert O_{gS} \vert \). Comme \( p \) divise \( \vert O_{gS} \vert \) alors, par somme fini, on observe \( p \) divise \( \vert G/S \vert \). <br>
+              Or, le fait que \( S \) soit un \( p \)-sous-groupe de Sylow de \( G \) indique que \( \vert G/S \vert \) et \( p \) sont premiers (cela signifie que \( p \) ne divise pas \( \vert G/S \vert \)). Ceci fournit une contradiction sur la précédente observation qui découle de l'équation aux classes et donc, \( p \) ne divise pas l'ordre de \( G/ gSg^{-1} \cap H \). <br>
+              <i>Conslusion :</i> De tous ces faits, \( gSg^{-1} \cap H  \) est un \(p\)-sous-groupe de Sylow de \( H \).
+            </p>
+          </div>
+
+          <p>Ce résultat est très efficace en pratique.</p>
+
+        </div>
+      </section>
+
+      <section class="footnav">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary" style="color:white; border-color: white;" ><a href="groupe.html">Sortir</a></button>
+            <button type="button" class="btn btn-outline-primary" style="color:white; border-color: white;">Chapitre 2</button>
+          </div>
+      </section>
+
+      <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+    </body>
+    <script src="../app.js"></script>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Fonctions à valeurs réelles</title>
+        <link rel="stylesheet" href="../lesson_cs.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script src="https://unpkg.com/mathjs@11.8.0/lib/browser/math.js"></script>
+        <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+      <header>
+        <nav class="navigation">
+            <a href="../home.html">Home</a>
+            <a href="../home.html#about">Retour méthodes</a>
+        </nav>
+      </header>
+      <section class="contenu">
+          <h1 class="chapitre">Chapitre 1 : Continuité</h1>
+
+            <h2 class="subtitle">Montrer qu'une fonction est continue en un point</h2>
+            
+            <div class="textes">              
+              <div class="thm">
+                <p> <b>Utiliser la définition.</b> Il suffit d'appliquer la définition abstraite de la continuité (i.e. celle avec les quantificateurs).
+                  </p>
+              </div>
+
+              <p>
+                <b>Conseils. </b> Cette méthode s'applique quand on est amené à résoudre un problème théorique.
+              </p>
+
+              <div class="exem">
+                <p> <b>Exemples.</b> Soit \(  f : I \rightarrow \mathbb{R} \) une fonction dérivable en \( a \in I \). Montrer que \( f \) est continue en \( a \).
+              </div>
+
+                <div class="thm">
+                    <p> <b>Utiliser les propriétés d'opération</b> Il suffit d'observer la forme de l'écriture de la fonction traitée.<br>
+                        Si c'est une somme, il suffit de vérifier que chaque fonction qui compose la somme est continue.<br>
+                        Si c'est un produit, il suffit de vérifier que chaque fonction qui compose le produit est continue.<br>
+                        Si c'est un quotient, il suffit de vérifier que le numérateur est continue et que le dénominateur est <i>non nul</i> et continue.
+                    </p>
+                </div>
+
+                <p>
+                    <b>Conseils.</b> On recourt à cette démarche quand la fonction est connue explicitement.
+                </p>
+
+                <div class="exem">
+                    <p>
+                        <b>Exemples.</b> Montrer que \( f : x \mapsto \prod_k x^k \) est continue en \( 0 \).
+                    </p>
+                </div>
+            </div>
+
+            <h2 class="subtitle">Montrer qu'une équation admet une solution</h2>
+
+            <div class="textes">
+              <div class="thm">
+                <p> <b>Utiliser le TVI.</b> Le théorème des valeurs intermédiaires garanti l'existence d'un élément vérifiant une égalité. La seule chose à faire est de vérifier toutes les conditions d'application de ce résultat.
+                  </p>
+              </div>
+
+              <div class="exem">
+                <p> <b>Exemples.</b> Montrer que \( x \mapsto x^2 \) s'annule en \( 0 \).
+              </div>
+            </div>
+
+            <h2 class="subtitle">Montrer qu'une équation admet une solution</h2>
+
+        </section>
+        <section class="footnav">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary" style="color:white; border-color: white;" ><a href="groupe.html">Sortir</a></button>
+            <button type="button" class="btn btn-outline-primary" style="color:white; border-color: white;">Chapitre 2</button>
+          </div>
+      </section>
+
+        <script src="graph_in_modal.js"></script>
+        <script src="collapse_demonstration_topic.js"></script>
+        <script src="modal.js"></script>
+
+        <script>
+          var coll = document.getElementsByClassName("collapsible");
+          var i;
+          
+          for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.maxHeight){
+                content.style.maxHeight = null;
+              } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+              } 
+            });
+          }
+          </script>
+    </body>
+    <script src="../app.js"></script>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>Nombres réels</title>
+        <link rel="stylesheet" href="../lesson_cs.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script src="https://unpkg.com/mathjs@11.8.0/lib/browser/math.js"></script>
+        <script src="https://cdn.plot.ly/plotly-1.35.2.min.js"></script>
+
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+      <header>
+        <nav class="navigation">
+            <a href="../home.html">Home</a>
+            <a href="../analyse/nombre_reel.html">Retour leçon</a>
+        </nav>
+      </header>
+      <section class="contenu">
+          <h1 class="chapitre">Chapitre 1 : Nombre réel</h1>
+
+            <h2 class="subtitle">Construction</h2>
+            
+            <div class="textes">
+              <p>On commence avec les entiers naturels : \( \mathbb{N} = \left\{ 0,1,2,3,4,... \right\} \). On ajoute dans cet ensemble leurs
+                opposés, on obtient donc \( \mathbb{Z} \) : les entiers relatifs.</p>
+              
+              <div class="prop">
+                <p> <b>Axiome (Peano).</b> Il existe un ensemble \( E \), une application \( f : E \rightarrow E \) et un élément \( e \in E \) tels que 
+                    <ol>
+                        <li>\( f \) est injective sur \( E \) </li>
+                        <li>\( 0 \notin f(E) \)</li>
+                        <li>Pour tout \( F \subset E \), \( e \in F \) et \( f(F \cap E) \subset F \) entraîne \( F = E \) </li>
+                    </ol>
+                  </p>
+              </div>
+
+              <p>Pour </p>
+
+              <div class="exem">
+                <p> <b>Exemples.</b> On peut citer <ul>
+                  <li>\( (t,y) \mapsto y(t) - t \)</li>
+                  <li>\( (t,y,y') \mapsto y'(t) - t \)</li>
+                </ul></p>
+              </div>
+
+              <div class="thm">
+                <p> <b>Théorème (de Cauchy-Lipschitz)</b> Soient \( U \) un ouvert de \( \mathbb{R} \times \mathbb{R}^n \) et \(n \in \mathbb{N}^* \) un entier. Si \(F\) est continue et 
+                  lipschitzienne sur \(U\) par rapport à la seconde variable alors pour tout \( (t_0,x_0) \in U \), il existe \( I_{t_0} \subset \mathbb{R} \) un voisinage de \(t_0\)
+                  et une fonction \( f : I_{t_0} \rightarrow \mathbb{R}^n \) telle que \( f(t_0) = y_0 \) solution de l'équation \( F(t,y,y',...,y^{(n-1)}) = y^{(n)} \)  </p>
+              </div>
+
+              <button id="myBtn" style="color:black;">Graphique</button>
+              
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Graphique de l'essai</p>
+                  <div class="slidecontainer" style="align-content: center;">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    <p>Value: <span id="demo"></span></p>
+
+                    <form id="form">
+                      <label for="eq">Enter an equation:</label>
+                      <input type="text" id="eq" value="4 * sin(x) + 5 * cos(x/2)" />
+                      <input type="submit" value="Draw" />
+                    </form>
+                    
+                    <div id="plot"></div>
+                    
+                    <p>
+                      Used plot library: <a href="https://plot.ly/javascript/">Plotly</a>
+                    </p>
+                    <p><a href="../first_figure.html">Pour aller plus loin.</a></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <h2 class="subtitle">Solutions</h2>
+
+            <div class="textes">
+              <div class="def">
+                <p> <b>Définition (Wronskien).</b> On appelle Wronskien de la famille \( \left\{ f_1,...,f_n \right\} \) au point \( x_0 \in \mathbb{R} \) la quantité
+                  \( W(f_1,...,f_n,x) = \det \begin{pmatrix} 
+                  f_1(x) & & f_n(x) \\
+                  \vdots & & \vdots \\
+                  f_1^{(n-1)} & & f_n^{(n-1)}(x) \\
+                  \end{pmatrix}  \)
+                  </p>
+              </div>
+            </div>
+
+        </section>
+        <section class="footnav">
+          <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button type="button" class="btn btn-outline-primary" style="color:white; border-color: white;" ><a href="groupe.html">Sortir</a></button>
+            <button type="button" class="btn btn-outline-primary" style="color:white; border-color: white;">Chapitre 2</button>
+          </div>
+      </section>
+
+        <script src="graph_in_modal.js"></script>
+        <script src="collapse_demonstration_topic.js"></script>
+        <script src="modal.js"></script>
+
+        <script>
+          var coll = document.getElementsByClassName("collapsible");
+          var i;
+          
+          for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.maxHeight){
+                content.style.maxHeight = null;
+              } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+              } 
+            });
+          }
+          </script>
+    </body>
+    <script src="../app.js"></script>
+</html>
